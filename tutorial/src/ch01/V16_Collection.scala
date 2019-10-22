@@ -33,14 +33,18 @@ object V16_Collection {
     buffers(0) = 9
     println(buffers.mkString(","))
     // 增加数据
-    val newBuffer = buffers+=(10)
+    val newBuffer = buffers += (10)
     println(buffers.mkString(","))
     println(newBuffer == buffers)
-    // 移除袁术
+    // 移除元素，也可以使用-=
     val i = buffers.remove(1) // 1是代表移除索引为1的数据
-    buffers.remove(1,2) // 从1开始删，删2个元素
+    buffers.remove(1, 2) // 从1开始删，删2个元素
     println(i)
     println(buffers.mkString(","))
+    // 可变数组转不可变数组
+    val array: Array[Int] = buffers.toArray
+    // 不可变数组转可变数组
+    val buffer = array.toBuffer
   }
 }
 
